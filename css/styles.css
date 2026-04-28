@@ -127,3 +127,63 @@ main {
     margin: 100px 0px;
 }
 
+// Homepage specific styles //
+
+.carousel {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.carousel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 20px;
+}
+
+.carousel-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.carousel-button-left {
+    transform: rotate(90deg);
+}
+
+.carousel-button-right {
+    transform: rotate(-90deg);
+}
+
+.products h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px 48px;
+}
+
+.product-card {
+    overflow: hidden;
+    border-radius: 30px;
+}
