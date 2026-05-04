@@ -10,6 +10,7 @@
 h1, h2, h3, h4, h5, h6 {
     color: var(--pri-text);
     font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
 h1, h2, h3 {
@@ -127,7 +128,7 @@ main {
     margin: 100px 0px;
 }
 
-// Homepage specific styles //
+/* Homepage specific styles */
 
 .carousel {
     width: 100%;
@@ -292,4 +293,123 @@ main {
 
 .discounted-price {
     color: var(--error-text);
+}
+
+/* Product page specific styles */
+
+.product-details {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.product-details-image, .product-info {
+    flex: 1;
+    border: 1px solid var(--pri-text);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.product-details-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.product-description {
+    height: 200px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 1px solid var(--pri-text);
+}
+
+.description, .tags {
+    margin: 0;
+    flex: 1;
+    width: 80%%;
+    padding: 10px;
+    border: 1px solid var(--pri-text);
+    justify-self: flex-start;
+}
+
+.description {
+    border-radius: 30px 30px 0px 0px;
+}
+
+.tags {
+    border-radius: 0px 0px 30px 30px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.discounted-price, .old-price, .price {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--pri-text);
+}
+
+.add-to-cart {
+    border-radius: 30px;
+    border: 2px solid var(--pri-text);
+    background-color: var(--accent);
+    padding: 10px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.product-reviews {
+    width: 80%;
+    height: auto;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--pri-text);
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviewer-name {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.review-rating {
+    color: var(--accent);
+    font-size: 2rem;
+    letter-spacing: 8px;
+}
+
+.error {
+    color: var(--error-text);
+    font-weight: bold;
 }

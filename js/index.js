@@ -40,7 +40,7 @@ async function fetchProducts() {
                         <img src="${product.image.url}" alt="${product.image.alt}" class="product-image" />
                         <div class="product-card-info">
                             <h5>${product.title}</h5>
-                            ${hasDiscount ? `<h6 class="price-row"><span class="old-price">${product.price},-</span> <span class="discounted-price">${product.discountedPrice},-</span></h6>` : `<h6>${product.price},-</h6>`}
+                            ${hasDiscount ? `<h6 class="price-row"><span class="old-price">${product.price},-</span> <span class="discounted-price">${product.discountedPrice},-</span></h6>` : `<h6 class="price-row"><span class="price">${product.price},-</h6>`}
                         </div>
                     </a>
                 </article>
