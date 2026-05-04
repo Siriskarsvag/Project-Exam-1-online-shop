@@ -83,6 +83,14 @@ async function fetchProduct() {
             </div>
         `;
 
+        const addToCartButton = document.querySelector('.add-to-cart');
+
+        addToCartButton.addEventListener('click', () => {
+            if (!currentProduct) return;
+            addToCart(currentProduct);
+            alert('Product added to cart!');
+        });
+
     } catch (error) {
         productInfo.textContent = "Error loading product details.";
         productReviews.textContent = "Error loading reviews.";
