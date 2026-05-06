@@ -5,15 +5,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="..." />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="main.js" defer></script>
-    <script src="cart.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/main.js" defer></script>
+    <script src="js/cart.js" defer></script>
   </head>
   <body>
     <header>
-      <nav></nav>
+      <a href="index.html"
+        ><img src="assets/image0.png" alt="Yellow C being clicked" class="logo"
+      /></a>
+      <div class="brand-lines">
+        <div class="thin-line"></div>
+        <div class="thicker-line"></div>
+      </div>
+      <h1>The Collection</h1>
+      <nav>
+        <a href="login.html"
+          ><img src="assets/login_19006828.png" alt="Login Icon"
+        /></a>
+        <a href="cart.html"
+          ><img src="assets/shopping-cart_3916598.png" alt="Cart Icon"
+        /></a>
+      </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <section class="cart-section">
+        <h2>Cart Overview</h2>
+        <table>
+          <tbody id="cart-items-table" class="cart-items-table"></tbody>
+        </table>
+        <div class="cart-summary">
+          <h3 id="cart-total">Total: $0.00</h3>
+        </div>
+        <button class="checkout-button"><h3>Continue to Checkout</h3></button>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 The Collection. All rights reserved.</p>
+      <div class="brand-lines">
+        <div class="thin-line"></div>
+        <div class="thicker-line"></div>
+      </div>
+    </footer>
   </body>
 </html>
