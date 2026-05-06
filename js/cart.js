@@ -19,7 +19,7 @@ function addToCart(product) {
             title: product.title,
             price: product.discountedPrice < product.price ? product.discountedPrice : product.price,
             quantity: 1,
-            image: product.image
+            image: product.image.url
         });
     }
 
@@ -49,7 +49,9 @@ function renderCart() {
     itemTable.innerHTML = "";
     
     if (cartItems.length === 0) {
-        itemTable.innerHTML = "Your cart is empty.";
+        itemTable.innerHTML += `
+            <p class="error">Your cart is empty.</p>
+        `;
         renderCartTotal();
         return;
     }
@@ -57,7 +59,7 @@ function renderCart() {
     cartItems.forEach((item) => {
         itemTable.innerHTML += `
             <tr>
-                <td  class="cart-item-image">
+                <td class="cart-item-image">
                     <img src="${item.image}">
                 </td>
                 <td class="cart-item-title">
@@ -72,6 +74,42 @@ function renderCart() {
             </tr>
 
         `;
+    });
+
+    const decreaseButtons = document.querySelectorAll(".decrease-quantity");
+    const increaseButtons = document.querySelectorAll(".increase-quantity");
+    const removeButtons = document.querySelectorAll(".remove-item");
+
+    increaseButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            cartItems[index].quantity += 1;
+
+            saveCartItems(cartItems);
+
+            renderCart();
+        });
+    });
+
+    decreaseButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            if (cartItems[index].quantity > 1) {
+                cartItems[index].quantity -= 1;
+
+                saveCartItems(cartItems);
+                
+                renderCart();
+            }
+        });
+    });
+
+    removeButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            cartItems.splice(index, 1);
+
+            saveCartItems(cartItems);
+
+            renderCart();
+        });
     });
 
     renderCartTotal();
