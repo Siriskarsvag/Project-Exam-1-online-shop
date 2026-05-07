@@ -32,18 +32,20 @@
       <section class="register-section">
         <h2>Register</h2>
         <form id="register-form">
-          <label for="email">Email</label>
+          <label for="username"><h6>Username</h6></label>
+          <input type="text" id="username" name="username" required />
+          <label for="email"><h6>Email</h6></label>
           <input type="email" id="email" name="email" required />
-          <label for="password">Password</label>
+          <label for="password"><h6>Password</h6></label>
           <input type="password" id="password" name="password" required />
-          <label for="confirm-password">Confirm Password</label>
+          <label for="confirm-password"><h6>Confirm Password</h6></label>
           <input
             type="password"
             id="confirm-password"
             name="confirm-password"
             required
           />
-          <button type="submit">Register</button>
+          <button type="submit" class="CTA">Register</button>
         </form>
       </section>
     </main>

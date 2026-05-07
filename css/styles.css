@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3 {
     text-decoration-line: underline;
+    font-weight: 700;
+}
+
+h4, h5, h6 {
+    font-weight: 600;
 }
 
 h1, h2 {
@@ -57,6 +62,7 @@ p {
     color: var(--pri-text);
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    font-weight: 400;
 }
 
 body {
@@ -341,7 +347,6 @@ main {
 .description, .tags {
     margin: 0;
     flex: 1;
-    width: 80%%;
     padding: 10px;
     border: 1px solid var(--pri-text);
     justify-self: flex-start;
@@ -366,15 +371,6 @@ main {
     padding: 10px 20px;
     border-radius: 30px;
     border: 1px solid var(--pri-text);
-}
-
-.add-to-cart {
-    border-radius: 30px;
-    border: 2px solid var(--pri-text);
-    background-color: var(--accent);
-    padding: 10px 30px;
-    text-transform: uppercase;
-    cursor: pointer;
 }
 
 .product-reviews {
@@ -494,12 +490,54 @@ main {
     align-items: center;
 }
 
-.checkout-button {
+.CTA {
     border-radius: 30px;
     border: 2px solid var(--pri-text);
     background-color: var(--accent);
     padding: 10px 30px;
     text-transform: uppercase;
     cursor: pointer;
+    color: var(--pri-text);
+    font-family: 'Poppins', sans-serif;
+    text-decoration-line: underline;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    font-size: 40px;
+}
+
+/* Login and register page specific styles */
+
+.register-section, .login-section {
     width: 80%;
+    border-radius: 30px;
+    border: 1px solid var(--pri-text);
+    height: auto;
+    margin: 80px auto 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#login-form, #register-form {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#login-form input, #register-form input {
+    height: 60px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--pri-text);
+    padding: 0 10px;
+}
+
+#register-button{
+    background-color: var(--primary);
+    border: none;
 }

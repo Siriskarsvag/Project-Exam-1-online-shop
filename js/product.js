@@ -64,7 +64,7 @@ async function fetchProduct() {
             </div>
             ${getPriceHTML(product)}
 
-            <button class="add-to-cart"><h3>Add to Cart</h3></button>
+            <button class="CTA">Add to Cart</button>
         `;
 
         const reviewsHTML = product.reviews.length
@@ -83,7 +83,7 @@ async function fetchProduct() {
             </div>
         `;
 
-        const addToCartButton = document.querySelector('.add-to-cart');
+        const addToCartButton = document.querySelector('.CTA');
 
         addToCartButton.addEventListener('click', () => {
             if (!currentProduct) return;
