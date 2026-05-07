@@ -5,15 +5,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="..." />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="main.js" defer></script>
-    <script src="register.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/register.js" defer></script>
   </head>
   <body>
     <header>
-      <nav></nav>
+      <a href="index.html"
+        ><img src="assets/image0.png" alt="Yellow C being clicked" class="logo"
+      /></a>
+      <div class="brand-lines">
+        <div class="thin-line"></div>
+        <div class="thicker-line"></div>
+      </div>
+      <h1>The Collection</h1>
+      <nav>
+        <a href="login.html"
+          ><img src="assets/login_19006828.png" alt="Login Icon"
+        /></a>
+        <a href="cart.html"
+          ><img src="assets/shopping-cart_3916598.png" alt="Cart Icon"
+        /></a>
+      </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <section class="register-section">
+        <h2>Register</h2>
+        <form id="register-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+          <button type="submit">Register</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 The Collection. All rights reserved.</p>
+      <div class="brand-lines">
+        <div class="thin-line"></div>
+        <div class="thicker-line"></div>
+      </div>
+    </footer>
   </body>
 </html>
