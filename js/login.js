@@ -27,7 +27,7 @@ loginForm.addEventListener('submit', async (event) => {
 
     if (response.ok) {
         localStorage.setItem('token', result.data.accessToken);
-        localStorage.setItem('user', JSON.stringify(result.data.user));
+        localStorage.setItem('user', JSON.stringify(result.data));
 
         alert('Login successful!');
         window.location.href = 'index.html';
@@ -35,3 +35,26 @@ loginForm.addEventListener('submit', async (event) => {
         alert(result.errors?.[0].message || 'Login failed!');
     }
 });
+
+const storedUser = localStorage.getItem('user');
+let user = null;
+if (storedUser && storedUser !== 'undefined') {
+    user = JSON.parse(storedUser);
+}
+
+const loginSection = document.getElementById('login-section');
+
+if (user && loginSection) {
+
+    loginSection.innerHTML = `
+        <h2>Welcome, ${user.name}!</h2>
+        <button id="logout-button" class="CTA">Logout</button>
+    `;
+
+    document.getElementById('logout-button').addEventListener('click', () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+
+        window.location.reload();
+    });
+}
