@@ -1,19 +1,160 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Checkout Page</title>
+    <title>Product Page</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="..." />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="main.js" defer></script>
-    <script src="checkout.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/main.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/product.js" defer></script>
   </head>
   <body>
     <header>
-      <nav></nav>
+      <a href="index.html"
+        ><img src="assets/image0.png" alt="Yellow C being clicked" class="logo"
+      /></a>
+      <div class="brand-lines">
+        <div class="thin-line"></div>
+        <div class="thicker-line"></div>
+      </div>
+      <h1>The Collection</h1>
+      <nav>
+        <a href="login.html"
+          ><img src="assets/login_19006828.png" alt="Login Icon"
+        /></a>
+        <a href="cart.html"
+          ><img src="assets/shopping-cart_3916598.png" alt="Cart Icon"
+        /></a>
+      </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <section class="shipping-step">
+        <div class="step-indicator">
+          <div class="step active">1</div>
+          <div class="step">2</div>
+          <div class="step">3</div>
+        </div>
+        <h2>Shipping Details</h2>
+        <form id="shipping-form">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="postal-code">Postal Code</label>
+            <input type="text" id="postal-code" name="postal-code" required />
+            <label for="town">Town</label>
+            <input type="text" id="town" name="town" required />
+          </div>
+        </form>
+        <button class="CTA">Next</button>
+      </section>
+      <section class="payment-step">
+        <div class="step-indicator">
+          <div class="step">1</div>
+          <div class="step active">2</div>
+          <div class="step">3</div>
+        </div>
+        <h2>Payment Details</h2>
+        <div class="payment-options">
+          <input
+            type="radio"
+            id="credit-card"
+            name="payment-method"
+            value="credit-card"
+            checked
+          />
+          <label for="credit-card"
+            ><img
+              src="assets/credit-cards_104829.png"
+              alt="Credit Card Icon"
+            />Credit Card</label
+          >
+          <input
+            type="radio"
+            id="paypal"
+            name="payment-method"
+            value="paypal"
+          />
+          <label for="paypal"
+            ><img
+              src="assets/paypal_1077036.png"
+              alt="PayPal Icon"
+            />PayPal</label
+          >
+          <input
+            type="radio"
+            id="gift-card"
+            name="payment-method"
+            value="gift-card"
+          />
+          <label for="gift-card"
+            ><img src="assets/gift-card_7928232.png" alt="Gift Card Icon" />Gift
+            Card</label
+          >
+        </div>
+        <form id="payment-form">
+          <div class="form-group">
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" name="card-name" required />
+          </div>
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" required />
+          </div>
+          <div class="form-group">
+            <label for="expiration-date">Expiration Date</label>
+            <input
+              type="text"
+              id="expiration-date"
+              name="expiration-date"
+              required
+            />
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required />
+          </div>
+        </form>
+        <button class="CTA">Next</button>
+      </section>
+      <section class="summary-step">
+        <div class="step-indicator">
+          <div class="step">1</div>
+          <div class="step">2</div>
+          <div class="step active">3</div>
+        </div>
+        <h2>Order Summary</h2>
+        <table class="order-summary"></table>
+        <div class="summary-user-input">
+          <div class="user-input">
+            <h6>User</h6>
+            <button class="edit-btn">Edit</button>
+          </div>
+          <div class="user-input">
+            <h6>Shipping address</h6>
+            <button class="edit-btn">Edit</button>
+          </div>
+          <div class="user-input">
+            <h6>Payment method</h6>
+            <button class="edit-btn">Edit</button>
+          </div>
+        </div>
+        <button class="CTA">Complete Purchase</button>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 The Collection. All rights reserved.</p>
+      <div class="brand-lines">
+        <div class="thin-line"></div>
+        <div class="thicker-line"></div>
+      </div>
+    </footer>
   </body>
 </html>
