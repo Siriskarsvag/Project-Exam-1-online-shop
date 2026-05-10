@@ -84,10 +84,27 @@ async function fetchProduct() {
         `;
 
         const addToCartButton = document.querySelector('.CTA');
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            addToCartButton.style.opacity = '0.6';
+            addToCartButton.style.cursor = 'not-allowed';
+        }
 
         addToCartButton.addEventListener('click', () => {
+
+            const token = localStorage.getItem('token');
+
+            if (!token) {
+                alert('You must be logged in to add products to the cart.');
+                window.location.href = 'login.html';
+                return;
+            }
+
             if (!currentProduct) return;
+
             addToCart(currentProduct);
+
             alert('Product added to cart!');
         });
 
