@@ -54,6 +54,7 @@ if (user && loginSection) {
     document.getElementById('logout-button').addEventListener('click', () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        localStorage.removeItem('cartItems');
 
         window.location.reload();
     });
