@@ -542,3 +542,117 @@ main {
     background-color: var(--primary);
     border: none;
 }
+
+/* Checkout page specific styles */
+
+.shipping-step, .payment-step, .summary-step {
+    width: 80%;
+    height: auto;
+    border-radius: 30px;
+    border: 1px solid var(--pri-text);
+    margin: 80px auto 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--pri-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e6e6;
+}
+
+.active-step .step-circle {
+    background-color: var(--pri-text);
+    color: var(--primary);
+}
+
+.step.active-step h6 {
+    color: var(--primary);
+}
+
+/* Shipping form styles */
+
+#shipping-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.double-form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group input {
+    border: none;
+    border-bottom: 1px solid var(--pri-text);
+    padding: 12px 4px;
+    width: 100%;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-bottom: 2px solid var(--pri-text);
+}
+
+/* Payment form styles */
+
+#payment-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--pri-text);
+    border-radius: 30px;
+}
+
+.payment-options {
+    width: 80%;
+    border: 1px solid var(--pri-text);
+    border-radius: 30px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
