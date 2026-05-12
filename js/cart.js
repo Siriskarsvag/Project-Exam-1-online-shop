@@ -116,3 +116,19 @@ function renderCart() {
 }
 
 renderCart();
+
+const checkoutButton = document.getElementById('checkout-btn');
+
+
+if (checkoutButton) {
+    checkoutButton.addEventListener('click', () => {
+        const cartItems = getCartItems();
+
+        if (cartItems.length === 0) {
+            alert('Your cart is empty. Please add items to your cart before checking out.');
+            return;
+        }
+
+        window.location.href = 'checkout.html';
+    });
+}
