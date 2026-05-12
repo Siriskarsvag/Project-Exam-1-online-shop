@@ -112,3 +112,13 @@ editPaymentBtn.addEventListener('click', () => {
 editUserBtn.addEventListener('click', () => {
     window.location.href = 'login.html';
 });
+
+const completePurchaseBtn = document.getElementById('complete-purchase');
+
+if (completePurchaseBtn) {
+    completePurchaseBtn.addEventListener('click', () => {
+        localStorage.removeItem('cartItems');
+
+        window.location.href = 'success.html';
+    });
+}

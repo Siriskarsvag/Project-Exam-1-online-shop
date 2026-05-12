@@ -335,6 +335,26 @@ main {
     gap: 20px;
 }
 
+.title-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.share-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.share-button img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
 .product-description {
     height: 200px;
     width: 80%;
@@ -733,3 +753,21 @@ main {
 .edit-btn h6 {
     color: green;
 }
+
+/* Success page specific styles */
+
+.success-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.success-section img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+

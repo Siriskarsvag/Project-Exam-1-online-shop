@@ -1,6 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
 
+if (!productId) {
+    window.location.href = "index.html";
+}
+
 const productURL = `https://v2.api.noroff.dev/online-shop/${productId}`;
 
 let currentProduct = null;
@@ -57,7 +61,12 @@ async function fetchProduct() {
 
         productImage.innerHTML = `<img src="${product.image.url}" alt="${product.title}">`;
         productInfo.innerHTML = `
-            <h2>${product.title}</h2>
+            <div class="title-row">
+                <h2>${product.title}</h2> 
+                <button id="share-button" class="share-button" type="button">
+                    <img src="assets/share_1828959.png" alt="Share">
+                </button>
+            </div>
             <div class="product-description">
                 <p class="description">${product.description}</p>
                 <p class="tags">#${product.tags.join(', #')}</p>
@@ -66,6 +75,25 @@ async function fetchProduct() {
 
             <button class="CTA">Add to Cart</button>
         `;
+
+        const shareButton = document.getElementById('share-button');
+
+        if (shareButton) {
+            shareButton.addEventListener('click', async () => {
+                const shareUrl = window.location.href;
+
+                if (navigator.share) {
+                    await navigator.share({
+                        title: currentProduct.title,
+                        text: `Check out this product: ${currentProduct.title}`,
+                        url: shareUrl,
+                    });
+                } else {
+                    await navigator.clipboard.writeText(shareUrl);
+                    alert('Product URL copied to clipboard!');
+                }
+            });
+        }
 
         const reviewsHTML = product.reviews.length
             ? product.reviews.map(review => `
