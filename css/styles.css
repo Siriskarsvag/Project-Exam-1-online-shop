@@ -771,3 +771,104 @@ main {
     object-fit: cover;
 }
 
+/* Responsive styles */
+
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    header, main, footer {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    h1 {
+    font-size: 26px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    nav a img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .thin-line {
+        width: 10px;
+    }
+
+    .thicker-line {
+        width: 30px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    header {
+        height: 200px;
+    }
+
+    /* Homepage specific styles */
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 18px;
+    }
+
+    .carousel-container {
+        width: 90%;
+        height: 300px;
+    }
+
+    /* Product page specific styles */
+
+    .product-details {
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .CTA {
+        font-size: 24px;
+    }
+
+    .review {
+        flex-direction: column;
+    }
+
+    .review-rating {
+        margin: 0;
+    }
+
+    /* Cart page specific styles */
+
+    .cart-section {
+        width: 90%;
+        padding: 20px 10px;
+    }
+
+
