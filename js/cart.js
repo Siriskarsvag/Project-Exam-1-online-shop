@@ -69,7 +69,7 @@ function renderCart() {
                     <button class="decrease-quantity">-</button><h6>${item.quantity}</h6><button class="increase-quantity">+</button><img src="assets/waste-bin_7951984.png" alt="Remove item" class="remove-item">
                 </td>
                 <td class="cart-item-price">
-                    <h6>${item.price},-</h6>
+                    <h6>${(item.price * item.quantity).toFixed(2)},-</h6>
                 </td>
             </tr>
 
@@ -94,13 +94,16 @@ function renderCart() {
         button.addEventListener("click", () => {
             if (cartItems[index].quantity > 1) {
                 cartItems[index].quantity -= 1;
-
-                saveCartItems(cartItems);
-                
-                renderCart();
+            } else {
+                cartItems.splice(index, 1);
             }
+
+            saveCartItems(cartItems);
+
+            renderCart();
         });
     });
+
 
     removeButtons.forEach((button, index) => {
         button.addEventListener("click", () => {

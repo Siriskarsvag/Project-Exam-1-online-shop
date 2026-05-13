@@ -639,6 +639,7 @@ main {
     gap: 20px;
     align-items: center;
     width: 100%;
+    justify-content: space-between;
 }
 
 .form-group input {
@@ -866,9 +867,52 @@ main {
 
     /* Cart page specific styles */
 
-    .cart-section {
-        width: 90%;
-        padding: 20px 10px;
+   .cart-section {
+    width: 95%;
+    margin: 40px auto 20px;
+    padding: 15px;
     }
 
+    .cart-items-table td {
+        height: 60px;
+    }
 
+    .cart-item-image {
+        width: 60px;
+    }
+
+    .cart-item-title {
+        width: 180px;
+    }
+
+    .cart-item-quantity {
+        width: 120px;
+        gap: 10px;
+    }
+
+    .decrease-quantity, .increase-quantity {
+        width: 30px;
+        height: 30px;
+    }
+
+    .remove-item {
+        width: 16px;
+        height: 16px;
+    }
+
+    .cart-item-price {
+        width: 100px;
+    }
+
+    /* Checkout page specific styles */
+
+    .payment-options {
+        gap: 30px;
+    }
+
+    /* Success page specific styles */
+
+    .success-section img {
+        width: 120px;
+        height: 120px;
+    }
