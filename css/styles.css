@@ -134,6 +134,20 @@ main {
     margin: 100px 0px;
 }
 
+form label {
+    color: var(--pri-text);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-size: 24px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Homepage specific styles */
 
 .carousel {
@@ -609,12 +623,7 @@ main {
 }
 
 .active-step .step-circle {
-    background-color: var(--pri-text);
-    color: var(--primary);
-}
-
-.step.active-step h6 {
-    color: var(--primary);
+    background-color: var(--accent);
 }
 
 /* Shipping form styles */
@@ -749,10 +758,12 @@ main {
     background-color: transparent;
     border: none;
     cursor: pointer;
-}
-
-.edit-btn h6 {
-    color: green;
+    color: var(--validat-text);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-size: 24px;
 }
 
 /* Success page specific styles */
@@ -831,6 +842,10 @@ main {
 
     header {
         height: 200px;
+    }
+
+    form label {
+        font-size: 16px;
     }
 
     /* Homepage specific styles */
