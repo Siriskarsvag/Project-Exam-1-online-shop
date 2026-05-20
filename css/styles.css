@@ -622,6 +622,10 @@ a {
     justify-content: center;
     align-items: center;
     background-color: #e6e6e6;
+    font-family: poppins, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-size: 24px;
 }
 
 .active-step .step-circle {
