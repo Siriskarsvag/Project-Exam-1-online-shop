@@ -1,3 +1,5 @@
+// cart functionality using localStorage
+
 function getCartItems() {
     return JSON.parse(localStorage.getItem("cartItems")) || [];
 }
@@ -26,6 +28,7 @@ function addToCart(product) {
     saveCartItems(cartItems);
 }
 
+// Calculate total price of items in the cart
 function getCartTotal() {
     return getCartItems().reduce((total, item) => total + item.price * item.quantity, 0);
 }
@@ -40,6 +43,7 @@ function renderCartTotal() {
     totalElement.textContent = `Total: ${total.toFixed(2)},-`;
 }
 
+// Render cart items in the cart page
 function renderCart() {
     const itemTable = document.getElementById("cart-items-table");
     if (!itemTable) return;
@@ -76,6 +80,7 @@ function renderCart() {
         `;
     });
 
+    // Add event listeners for quantity buttons and remove buttons
     const decreaseButtons = document.querySelectorAll(".decrease-quantity");
     const increaseButtons = document.querySelectorAll(".increase-quantity");
     const removeButtons = document.querySelectorAll(".remove-item");
@@ -122,7 +127,7 @@ renderCart();
 
 const checkoutButton = document.getElementById('checkout-btn');
 
-
+// Handle checkout button click - check if cart is empty before navigating to checkout page
 if (checkoutButton) {
     checkoutButton.addEventListener('click', () => {
         const cartItems = getCartItems();

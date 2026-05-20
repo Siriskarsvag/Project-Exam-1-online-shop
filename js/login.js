@@ -1,5 +1,5 @@
 const loginForm = document.getElementById('login-form');
-
+// Login form submission handler
 loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -23,7 +23,6 @@ loginForm.addEventListener('submit', async (event) => {
     });
 
     const result = await response.json();
-    console.log(result);
 
     if (response.ok) {
         localStorage.setItem('token', result.data.accessToken);
@@ -44,6 +43,7 @@ if (storedUser && storedUser !== 'undefined') {
 
 const loginSection = document.getElementById('login-section');
 
+// If user is logged in, show welcome message and logout button
 if (user && loginSection) {
 
     loginSection.innerHTML = `

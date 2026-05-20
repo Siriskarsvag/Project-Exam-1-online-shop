@@ -98,12 +98,14 @@ header {
     height: 100%;
     width: 20px;
     background-color: var(--accent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .thicker-line {
     height: 100%;
     width: 60px;
     background-color: var(--accent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav {

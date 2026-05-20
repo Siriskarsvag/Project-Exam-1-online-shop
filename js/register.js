@@ -1,5 +1,6 @@
 const registerForm = document.getElementById('register-form');
 
+// Register form submission handler
 registerForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -41,13 +42,11 @@ registerForm.addEventListener('submit', async (event) => {
     });
 
     const result = await response.json();
-    console.log(result);
 
     if (response.ok) {
         alert('Registration complete!');
         window.location.href = 'login.html';
     } else {
-        console.log(result.errors?.[0].message);
         alert(result.errors?.[0].message || 'Registration failed!');
     }
 });

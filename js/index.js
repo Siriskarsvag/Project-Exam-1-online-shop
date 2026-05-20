@@ -8,7 +8,7 @@ const carouselImages = document.querySelector(".carousel-images");
 const leftButton = document.querySelector(".carousel-button-left");
 const rightButton = document.querySelector(".carousel-button-right");
 
-//Fetch products 
+//Fetch products from API and render carousel and product grid
 
 async function fetchProducts() {
     try {
@@ -48,7 +48,8 @@ async function fetchProducts() {
         });
 
     } catch (error) {
-        console.log("Error fetching products:", error);
+        document.querySelector(".product-grid").innerHTML = "<p class='error'>Failed to load products. Please try again later.</p>";
+        document.querySelector(".carousel-images").innerHTML = "<p class='error'>Failed to load products. Please try again later.</p>";
     }
 }
 
@@ -66,6 +67,8 @@ function renderCarousel() {
             <img src="${product.image.url}" alt="${product.image.alt}" class="carousel-image active" />
         </a>
     `;
+
+
 }
 
 function showNextProduct() {

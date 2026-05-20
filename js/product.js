@@ -1,3 +1,4 @@
+// fetching correct product based on URL parameter
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
 
@@ -8,6 +9,8 @@ if (!productId) {
 const productURL = `https://v2.api.noroff.dev/online-shop/${productId}`;
 
 let currentProduct = null;
+
+// Helper function to generate price HTML with discount handling
 
 function getPriceHTML(product) {
     const hasDiscount = product.discountedPrice < product.price;
@@ -27,6 +30,8 @@ function getPriceHTML(product) {
     `;
 }
 
+// Helper function to generate star rating HTML
+
 function getStars(rating) {
     let stars = '';
 
@@ -37,15 +42,17 @@ function getStars(rating) {
     return stars;
 }
 
+// Fetch product details and reviews, then update the page content
+
 async function fetchProduct() {
     const productImage = document.querySelector('.product-details-image');
     const productInfo = document.querySelector('.product-info');
     const productReviews = document.querySelector('.product-reviews');
 
-    productInfo.textContent = "Loading product details...";
-    productInfo.textContent = "";
-    productReviews.textContent = "Loading reviews...";
-    productReviews.textContent = "";
+    productInfo.innerHTML = '<p>Loading product details...</p>';
+    productInfo.innerHTML = "";
+    productReviews.innerHTML = '<p>Loading reviews...</p>';
+    productReviews.innerHTML = "";
 
     try {
         const response = await fetch(productURL);
@@ -75,6 +82,8 @@ async function fetchProduct() {
 
             <button class="CTA">Add to Cart</button>
         `;
+
+        // Share button functionality
 
         const shareButton = document.getElementById('share-button');
 
@@ -114,6 +123,8 @@ async function fetchProduct() {
         const addToCartButton = document.querySelector('.CTA');
         const token = localStorage.getItem('token');
 
+        // Disable add to cart button if user is not logged in
+
         if (!token) {
             addToCartButton.style.opacity = '0.6';
             addToCartButton.style.cursor = 'not-allowed';
@@ -137,9 +148,8 @@ async function fetchProduct() {
         });
 
     } catch (error) {
-        productInfo.textContent = "Error loading product details.";
-        productReviews.textContent = "Error loading reviews.";
-        console.error(error);
+        productInfo.innerHTML = '<p class="error">Error loading product details.</p>';
+        productReviews.innerHTML = '<p class="error">Error loading reviews.</p>';
     }
 }
 
