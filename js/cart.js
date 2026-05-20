@@ -64,13 +64,13 @@ function renderCart() {
         itemTable.innerHTML += `
             <tr>
                 <td class="cart-item-image">
-                    <img src="${item.image}">
+                    <img src="${item.image}" alt="${item.title}">
                 </td>
                 <td class="cart-item-title">
                     <h6>${item.title}</h6>
                 </td>
                 <td class="cart-item-quantity">
-                    <button class="decrease-quantity">-</button><h6>${item.quantity}</h6><button class="increase-quantity">+</button><img src="assets/waste-bin_7951984.png" alt="Remove item" class="remove-item">
+                    <button class="decrease-quantity" aria-label="Decrease quantity">-</button><h6>${item.quantity}</h6><button class="increase-quantity" aria-label="Increase quantity">+</button><img src="assets/waste-bin_7951984.png" alt="Remove icon" class="remove-item">
                 </td>
                 <td class="cart-item-price">
                     <h6>${(item.price * item.quantity).toFixed(2)},-</h6>

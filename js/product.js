@@ -70,8 +70,8 @@ async function fetchProduct() {
         productInfo.innerHTML = `
             <div class="title-row">
                 <h2>${product.title}</h2> 
-                <button id="share-button" class="share-button" type="button">
-                    <img src="assets/share_1828959.png" alt="Share">
+                <button id="share-button" class="share-button" type="button" aria-label="Share product">
+                    <img src="assets/share_1828959.png" alt="Share Icon">
                 </button>
             </div>
             <div class="product-description">

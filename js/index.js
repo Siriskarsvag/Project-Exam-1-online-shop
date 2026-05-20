@@ -36,7 +36,7 @@ async function fetchProducts() {
 
             productGrid.innerHTML += `
                 <article class="product-card">
-                    <a class="product-link" href="product-page.html?id=${product.id}">
+                    <a class="product-link" href="product-page.html?id=${product.id}" aria-label="View details for ${product.title}">
                         <img src="${product.image.url}" alt="${product.image.alt}" class="product-image" />
                         <div class="product-card-info">
                             <h5>${product.title}</h5>
@@ -63,7 +63,7 @@ function renderCarousel() {
     const product = carouselProducts[currentIndex];
 
     carouselImages.innerHTML = `
-        <a href="product-page.html?id=${product.id}">
+        <a href="product-page.html?id=${product.id}" aria-label="View details for ${product.title}">
             <img src="${product.image.url}" alt="${product.image.alt}" class="carousel-image active" />
         </a>
     `;

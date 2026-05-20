@@ -17,7 +17,7 @@
   </head>
   <body>
     <header>
-      <a href="index.html"
+      <a href="index.html" aria-label="Return to homepage"
         ><img src="assets/image0.png" alt="Yellow C being clicked" class="logo"
       /></a>
       <div class="brand-lines">
@@ -26,10 +26,10 @@
       </div>
       <h1>The Collection</h1>
       <nav>
-        <a href="login.html"
+        <a href="login.html" aria-label="Go to login page"
           ><img src="assets/login_19006828.png" alt="Login Icon"
         /></a>
-        <a href="cart.html"
+        <a href="cart.html" aria-label="Go to shopping cart"
           ><img src="assets/shopping-cart_3916598.png" alt="Cart Icon"
         /></a>
       </nav>
@@ -177,16 +177,34 @@
         </table>
         <div class="summary-user-input">
           <div class="user-input">
-            <h6 id="summary-user">User</h6>
-            <button class="edit-btn" id="edit-user">Edit</button>
+            <span id="summary-user" class="summary">User</span>
+            <button
+              class="edit-btn"
+              id="edit-user"
+              aria-label="Edit user information"
+            >
+              Edit
+            </button>
           </div>
           <div class="user-input">
-            <h6 id="summary-address">Shipping address</h6>
-            <button class="edit-btn" id="edit-address">Edit</button>
+            <span id="summary-address" class="summary">Shipping address</span>
+            <button
+              class="edit-btn"
+              id="edit-address"
+              aria-label="Edit shipping address"
+            >
+              Edit
+            </button>
           </div>
           <div class="user-input">
-            <h6 id="summary-payment">Payment method</h6>
-            <button class="edit-btn" id="edit-payment">Edit</button>
+            <span id="summary-payment" class="summary">Payment method</span>
+            <button
+              class="edit-btn"
+              id="edit-payment"
+              aria-label="Edit payment method"
+            >
+              Edit
+            </button>
           </div>
         </div>
         <button class="CTA" id="complete-purchase">Complete Purchase</button>

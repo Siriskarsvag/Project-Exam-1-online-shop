@@ -16,7 +16,7 @@
   </head>
   <body>
     <header>
-      <a href="index.html"
+      <a href="index.html" aria-label="Return to homepage"
         ><img src="assets/image0.png" alt="Yellow C being clicked" class="logo"
       /></a>
       <div class="brand-lines">
@@ -25,11 +25,11 @@
       </div>
       <h1>The Collection</h1>
       <nav>
-        <a href="login.html"
-          ><img src="assets/login_19006828.png" alt="Login Icon"
+        <a href="login.html" aria-label="Go to login page">
+          <img src="assets/login_19006828.png" alt="Login Icon"
         /></a>
-        <a href="cart.html"
-          ><img src="assets/shopping-cart_3916598.png" alt="Cart Icon"
+        <a href="cart.html" aria-label="Go to shopping cart">
+          <img src="assets/shopping-cart_3916598.png" alt="Cart Icon"
         /></a>
       </nav>
     </header>
@@ -37,13 +37,19 @@
       <section class="carousel">
         <h2>New in!</h2>
         <div class="carousel-container">
-          <button class="carousel-button carousel-button-left">
+          <button
+            class="carousel-button carousel-button-left"
+            aria-label="Previous Item"
+          >
             <img src="assets/down-arrow_3777645.png" alt="Left Arrow" />
           </button>
           <div class="carousel-images">
             <!-- Carousel images will be rendered here -->
           </div>
-          <button class="carousel-button carousel-button-right">
+          <button
+            class="carousel-button carousel-button-right"
+            aria-label="Next Item"
+          >
             <img src="assets/down-arrow_3777645.png" alt="Right Arrow" />
           </button>
         </div>

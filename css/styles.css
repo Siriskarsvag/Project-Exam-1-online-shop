@@ -136,7 +136,7 @@ main {
     margin: 100px 0px;
 }
 
-form label {
+form label, .summary {
     color: var(--pri-text);
     font-family: 'Poppins', sans-serif;
     margin: 0;
