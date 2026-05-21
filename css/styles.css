@@ -150,6 +150,71 @@ a {
     text-decoration: none;
 }
 
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 16px 24px;
+    border-radius: 30px;
+    border: 1px solid var(--pri-text);
+    background-color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+}
+
+.toast.success p {
+    color: var(--validat-text);
+    font-weight: 700;
+}
+
+.toast.error p {
+    color: var(--error-text);
+    font-weight: 700;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toast-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toast-button {
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: 1px solid var(--pri-text);
+    background-color: var(--accent);
+    color: var(--pri-text);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
 /* Homepage specific styles */
 
 .carousel {
@@ -834,16 +899,20 @@ a {
         height: 24px;
     }
 
+    .brand-lines {
+        gap: 10px;
+    }
+
     .thin-line {
-        width: 10px;
+        width: 6px;
     }
 
     .thicker-line {
-        width: 30px;
+        width: 20px;
     }
 
     nav {
-        gap: 20px;
+        gap: 10px;
     }
 
     header {
@@ -891,7 +960,7 @@ a {
    .cart-section {
     width: 95%;
     margin: 40px auto 20px;
-    padding: 15px;
+    padding: 5px;
     }
 
     .cart-items-table td {
@@ -899,7 +968,7 @@ a {
     }
 
     .cart-item-image {
-        width: 60px;
+        width: 100px;
     }
 
     .cart-item-title {
@@ -929,6 +998,18 @@ a {
 
     .payment-options {
         gap: 30px;
+    }
+
+    .order-summary {
+        width: 200px;
+    }
+
+    .summary-items td {
+        padding: 5px;
+    }
+
+    .summary {
+        font-size: 16px;
     }
 
     /* Success page specific styles */

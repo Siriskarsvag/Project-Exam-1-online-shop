@@ -7,7 +7,7 @@ loginForm.addEventListener('submit', async (event) => {
     const password = document.getElementById('password').value;
 
     if (!email || !password) {
-        alert('Please fill in all fields!');
+        showToast('Please enter both email and password.', 'error');
         return;
     }
 
@@ -28,10 +28,10 @@ loginForm.addEventListener('submit', async (event) => {
         localStorage.setItem('token', result.data.accessToken);
         localStorage.setItem('user', JSON.stringify(result.data));
 
-        alert('Login successful!');
-        window.location.href = 'index.html';
+        showToast('Login successful!', 'success', 'Continue Shopping', 'index.html');
+        
     } else {
-        alert(result.errors?.[0].message || 'Login failed!');
+        showToast(result.errors?.[0].message || 'Login failed!', 'error');
     }
 });
 

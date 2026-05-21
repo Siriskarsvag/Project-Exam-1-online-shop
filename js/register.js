@@ -10,22 +10,22 @@ registerForm.addEventListener('submit', async (event) => {
     const confirmPassword = document.getElementById('confirm-password').value;
 
     if (!name || !email || !password || !confirmPassword) {
-        alert('Please fill in all fields!');
+        showToast('Please fill in all fields!', 'error');
         return;
     }
 
     if (password.length < 8) {
-        alert('Password must be at least 8 characters long!');
+        showToast('Password must be at least 8 characters long!', 'error');
         return;
     }
 
     if (!email.endsWith('@stud.noroff.no')) {
-        alert('Email must be a valid @stud.noroff.no address!');
+        showToast('Email must be a valid @stud.noroff.no address!', 'error');
         return;
     }
 
     if (password !== confirmPassword) {
-        alert('Passwords do not match!');
+        showToast('Passwords do not match!', 'error');
         return;
     }
 
@@ -44,9 +44,8 @@ registerForm.addEventListener('submit', async (event) => {
     const result = await response.json();
 
     if (response.ok) {
-        alert('Registration complete!');
-        window.location.href = 'login.html';
+        showToast('Registration complete!', 'success', 'Go to Login', 'login.html');
     } else {
-        alert(result.errors?.[0].message || 'Registration failed!');
+        showToast(result.errors?.[0].message || 'Registration failed!', 'error');
     }
 });

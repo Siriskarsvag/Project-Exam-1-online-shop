@@ -20,7 +20,7 @@ shippingForm.addEventListener('submit', (event) => {
     const town = document.getElementById('town').value;
 
     if (!address || !postalCode || !town) {
-        alert('Please fill in all shipping details.');
+        showToast('Please fill in all shipping details.', 'error');
         return;
     }
 
@@ -45,7 +45,7 @@ paymentForm.addEventListener('submit', (event) => {
     const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked');
     
     if (!cardName || !cardNumber || !expirationDate || !cvv) {
-        alert('Please fill in all payment details.');
+        showToast('Please fill in all payment details.', 'error');
         return;
     }
 

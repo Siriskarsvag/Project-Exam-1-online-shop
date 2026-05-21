@@ -99,7 +99,7 @@ async function fetchProduct() {
                     });
                 } else {
                     await navigator.clipboard.writeText(shareUrl);
-                    alert('Product URL copied to clipboard!');
+                    showToast('Product URL copied to clipboard!', 'success');
                 }
             });
         }
@@ -135,8 +135,7 @@ async function fetchProduct() {
             const token = localStorage.getItem('token');
 
             if (!token) {
-                alert('You must be logged in to add products to the cart.');
-                window.location.href = 'login.html';
+                showToast('Please log in to add products to your cart.', 'error', 'Go to Login', 'login.html');
                 return;
             }
 
@@ -144,7 +143,7 @@ async function fetchProduct() {
 
             addToCart(currentProduct);
 
-            alert('Product added to cart!');
+            showToast('Product added to cart!', 'success', 'View Cart', 'cart.html');
         });
 
     } catch (error) {

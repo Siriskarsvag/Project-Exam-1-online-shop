@@ -37,7 +37,7 @@ async function fetchProducts() {
             productGrid.innerHTML += `
                 <article class="product-card">
                     <a class="product-link" href="product-page.html?id=${product.id}" aria-label="View details for ${product.title}">
-                        <img src="${product.image.url}" alt="${product.image.alt}" class="product-image" />
+                        <img src="${product.image.url}" alt="${product.title}" class="product-image" />
                         <div class="product-card-info">
                             <h5>${product.title}</h5>
                             ${hasDiscount ? `<h6 class="price-row"><span class="old-price">${product.price},-</span> <span class="discounted-price">${product.discountedPrice},-</span></h6>` : `<h6 class="price-row"><span class="price">${product.price},-</h6>`}
@@ -64,7 +64,7 @@ function renderCarousel() {
 
     carouselImages.innerHTML = `
         <a href="product-page.html?id=${product.id}" aria-label="View details for ${product.title}">
-            <img src="${product.image.url}" alt="${product.image.alt}" class="carousel-image active" />
+            <img src="${product.image.url}" alt="${product.title}" class="carousel-image active" />
         </a>
     `;
 

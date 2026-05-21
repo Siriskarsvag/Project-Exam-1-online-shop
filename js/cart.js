@@ -133,7 +133,7 @@ if (checkoutButton) {
         const cartItems = getCartItems();
 
         if (cartItems.length === 0) {
-            alert('Your cart is empty. Please add items to your cart before checking out.');
+            showToast('Your cart is empty. Please add items to your cart before checking out.', 'error', 'Shop for products', 'index.html');
             return;
         }
 
