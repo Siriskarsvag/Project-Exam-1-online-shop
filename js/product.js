@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
 
 if (!productId) {
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
 
 const productURL = `https://v2.api.noroff.dev/online-shop/${productId}`;
@@ -71,7 +71,7 @@ async function fetchProduct() {
             <div class="title-row">
                 <h2>${product.title}</h2> 
                 <button id="share-button" class="share-button" type="button" aria-label="Share product">
-                    <img src="assets/share_1828959.png" alt="Share Icon">
+                    <img src="../assets/share_1828959.png" alt="Share Icon">
                 </button>
             </div>
             <div class="product-description">
@@ -135,7 +135,7 @@ async function fetchProduct() {
             const token = localStorage.getItem('token');
 
             if (!token) {
-                showToast('Please log in to add products to your cart.', 'error', 'Go to Login', 'login.html');
+                showToast('Please log in to add products to your cart.', 'error', 'Go to Login', '../account/login.html');
                 return;
             }
 
@@ -143,7 +143,7 @@ async function fetchProduct() {
 
             addToCart(currentProduct);
 
-            showToast('Product added to cart!', 'success', 'View Cart', 'cart.html');
+            showToast('Product added to cart!', 'success', 'View Cart', '../cart/index.html');
         });
 
     } catch (error) {

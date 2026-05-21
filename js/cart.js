@@ -70,7 +70,7 @@ function renderCart() {
                     <h6>${item.title}</h6>
                 </td>
                 <td class="cart-item-quantity">
-                    <button class="decrease-quantity" aria-label="Decrease quantity">-</button><h6>${item.quantity}</h6><button class="increase-quantity" aria-label="Increase quantity">+</button><img src="assets/waste-bin_7951984.png" alt="Remove icon" class="remove-item">
+                    <button class="decrease-quantity" aria-label="Decrease quantity">-</button><h6>${item.quantity}</h6><button class="increase-quantity" aria-label="Increase quantity">+</button><img src="../assets/waste-bin_7951984.png" alt="Remove icon" class="remove-item">
                 </td>
                 <td class="cart-item-price">
                     <h6>${(item.price * item.quantity).toFixed(2)},-</h6>
@@ -133,10 +133,10 @@ if (checkoutButton) {
         const cartItems = getCartItems();
 
         if (cartItems.length === 0) {
-            showToast('Your cart is empty. Please add items to your cart before checking out.', 'error', 'Shop for products', 'index.html');
+            showToast('Your cart is empty. Please add items to your cart before checking out.', 'error', 'Shop for products', '../index.html');
             return;
         }
 
-        window.location.href = 'checkout.html';
+        window.location.href = '../checkout/index.html';
     });
 }

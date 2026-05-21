@@ -72,7 +72,7 @@ function renderSummaryItems() {
     summaryItemsContainer.innerHTML = '';
 
     if (cartItems.length === 0) {
-        window.location.href = 'cart.html';
+        window.location.href = '../cart/index.html';
     }
 
     cartItems.forEach(item => {
@@ -116,7 +116,7 @@ editPaymentBtn.addEventListener('click', () => {
 });
 
 editUserBtn.addEventListener('click', () => {
-    window.location.href = 'login.html';
+    window.location.href = '../account/login.html';
 });
 
 const completePurchaseBtn = document.getElementById('complete-purchase');
@@ -126,6 +126,6 @@ if (completePurchaseBtn) {
     completePurchaseBtn.addEventListener('click', () => {
         localStorage.removeItem('cartItems');
 
-        window.location.href = 'success.html';
+        window.location.href = '../success/index.html';
     });
 }

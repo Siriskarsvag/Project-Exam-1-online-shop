@@ -28,7 +28,7 @@ loginForm.addEventListener('submit', async (event) => {
         localStorage.setItem('token', result.data.accessToken);
         localStorage.setItem('user', JSON.stringify(result.data));
 
-        showToast('Login successful!', 'success', 'Continue Shopping', 'index.html');
+        showToast('Login successful!', 'success', 'Continue Shopping', '../index.html');
         
     } else {
         showToast(result.errors?.[0].message || 'Login failed!', 'error');
