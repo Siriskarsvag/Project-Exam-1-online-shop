@@ -140,3 +140,13 @@ if (checkoutButton) {
         window.location.href = '../checkout/index.html';
     });
 }
+
+const clearCartButton = document.getElementById('clear-cart');
+
+if (clearCartButton) {
+    clearCartButton.addEventListener('click', () => {
+        localStorage.removeItem("cartItems");
+        renderCart();
+        showToast('Cart has been cleared.', 'success', 'Shop for products', '../index.html');
+    });
+}
